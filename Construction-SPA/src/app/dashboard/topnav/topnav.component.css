@@ -1,13 +1,3 @@
-.container{
-    float: right;
-}
-.profile{
-    float: right;
-    margin-right: 10%;
-}
-.profile1 p, .profile1{
- display: inline-block; 
-}
-.dropdown show .profile1{
-    float: right;
+.container-fluid{
+    background-color: #fffde7;
 }

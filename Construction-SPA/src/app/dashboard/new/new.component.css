@@ -1,0 +1,14 @@
+
+.button{
+    margin-top: 10px;
+    font-size: 15px;
+        background-color: #0277bd;
+        border: none;
+        color: white;
+        padding: 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 12px;
+        font-weight: bold;
+}
