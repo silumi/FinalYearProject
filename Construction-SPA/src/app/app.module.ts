@@ -12,6 +12,8 @@ import { SearchComponent } from './dashboard/search/search.component';
 import { NotificationsComponent } from './dashboard/notifications/notifications.component';
 import { NewComponent } from './dashboard/new/new.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
+import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
+import { SmallCardsComponent } from './dashboard/small-cards/small-cards.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
     SearchComponent,
     NotificationsComponent,
     NewComponent,
-    ProfileComponent
+    ProfileComponent,
+    SidenavComponent,
+    SmallCardsComponent
   ],
   imports: [
     BrowserModule,

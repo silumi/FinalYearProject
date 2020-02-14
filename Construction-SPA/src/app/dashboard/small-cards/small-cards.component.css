@@ -1,0 +1,47 @@
+.main_body .container{
+	
+	margin-top: 65px;
+	
+	padding: 25px 40px;
+	transition: all 0.3s linear;
+}
+
+.main_body .container .item_wrap{
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.main_body .container .item_wrap .item{
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	padding: 25px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.main_body .container .item_wrap .item:first-child{
+	margin-right: 20px;
+}
+
+/* after adding active class */
+.wrapper.active .sidebar_menu{
+  width: 100px;
+}
+
+.wrapper.active .hamburger .fa-long-arrow-alt-right{
+  display: block;
+}
+
+.wrapper.active .hamburger .fa-long-arrow-alt-left{
+  display: none;
+}
+
+.wrapper.active .sidebar_menu ul li a .list{
+  display: none;
+}
+
+.wrapper.active .main_body .container{
+  width: calc(100% - 100px);
+  margin-left: 100px;
+}
+

@@ -1,0 +1,7 @@
+.container .col-md-7{
+    width: calc(100% - 250px);
+    margin-top: 5px;
+    
+    padding: 25px 40px;
+    transition: all 0.3s linear;
+}
