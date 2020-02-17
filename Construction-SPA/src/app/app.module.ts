@@ -14,6 +14,7 @@ import { NewComponent } from './dashboard/new/new.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { SmallCardsComponent } from './dashboard/small-cards/small-cards.component';
+import { ContentComponent } from './dashboard/content/content.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SmallCardsComponent } from './dashboard/small-cards/small-cards.compone
     NewComponent,
     ProfileComponent,
     SidenavComponent,
-    SmallCardsComponent
+    SmallCardsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

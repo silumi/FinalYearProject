@@ -1,47 +1,25 @@
-.main_body .container{
-	
-	margin-top: 65px;
-	
-	padding: 25px 40px;
+.container{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    margin-top: 60px;
+    padding: 25px 40px;
 	transition: all 0.3s linear;
+	
 }
-
-.main_body .container .item_wrap{
-	display: flex;
-	margin-bottom: 20px;
+.container .card-deck .card{
+	height: 150px;
 }
-
-.main_body .container .item_wrap .item{
-	background: #fff;
-	border: 1px solid #e0e0e0;
-	padding: 25px;
-	font-size: 14px;
-	line-height: 22px;
+.card-header bg-dribbble content-center{
+	height: 100px;
+	
 }
-
-.main_body .container .item_wrap .item:first-child{
-	margin-right: 20px;
-}
-
-/* after adding active class */
-.wrapper.active .sidebar_menu{
-  width: 100px;
-}
-
-.wrapper.active .hamburger .fa-long-arrow-alt-right{
-  display: block;
-}
-
-.wrapper.active .hamburger .fa-long-arrow-alt-left{
-  display: none;
-}
-
-.wrapper.active .sidebar_menu ul li a .list{
-  display: none;
-}
-
-.wrapper.active .main_body .container{
-  width: calc(100% - 100px);
-  margin-left: 100px;
-}
-
+.wrapper.active .container{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  } 
+  .card-header bg-dribbble content-center p{
+    font-size: 100px;
+  }
+  .fa fa-exclamation-triangle{
+	  margin-right: 20px;
+  }
