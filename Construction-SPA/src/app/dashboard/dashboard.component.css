@@ -1,4 +1,4 @@
-.container .col-md-7{
+#content{
     width: calc(100% - 250px);
     margin-top: 5px;
     

@@ -1,0 +1,12 @@
+.wrapper .container{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    
+    padding: 25px 40px;
+  transition: all 0.3s linear;
+ 
+}
+.wrapper.active .container{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  } 

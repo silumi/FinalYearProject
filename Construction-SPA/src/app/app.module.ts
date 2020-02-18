@@ -15,6 +15,8 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
 import { SmallCardsComponent } from './dashboard/small-cards/small-cards.component';
 import { ContentComponent } from './dashboard/content/content.component';
+import { ChartsComponent } from './dashboard/charts/charts.component';
+import { CommentComponent } from './dashboard/comment/comment.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ContentComponent } from './dashboard/content/content.component';
     ProfileComponent,
     SidenavComponent,
     SmallCardsComponent,
-    ContentComponent
+    ContentComponent,
+    ChartsComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

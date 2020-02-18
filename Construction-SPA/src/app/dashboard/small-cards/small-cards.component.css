@@ -1,19 +1,19 @@
-.container{
+.container-fluid{
     width: calc(100% - 250px);
     margin-left: 250px;
     margin-top: 60px;
     padding: 25px 40px;
-	transition: all 0.3s linear;
-	
+  transition: all 0.3s linear;
+ 
 }
-.container .card-deck .card{
+.container-fluid .card-deck .card{
 	height: 150px;
 }
 .card-header bg-dribbble content-center{
 	height: 100px;
 	
 }
-.wrapper.active .container{
+.wrapper.active .container-fluid{
     width: calc(100% - 100px); 
     margin-left: 100px;
   } 
