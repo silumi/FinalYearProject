@@ -1,0 +1,28 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
+  .wrapper .container-fluid{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    margin-right: 250px;
+    
+    padding: 10px 40px;
+  transition: all 0.3s linear;
+ 
+}
+.wrapper.active .container-fluid{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  } 
+  .page-footer font-small teal pt-4{
+  
+    bottom: 0;
+    height: 100%;
+  }
+  

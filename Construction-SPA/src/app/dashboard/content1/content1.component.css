@@ -3,7 +3,7 @@
     margin-left: 250px;
     margin-right: 250px;
     
-    padding: 25px 40px;
+    padding: 10px 40px;
   transition: all 0.3s linear;
  
 }
@@ -11,6 +11,4 @@
     width: calc(100% - 100px); 
     margin-left: 100px;
   } 
-  #charts{
-    height: 300px;
-  }
+  

@@ -1,0 +1,17 @@
+.wrapper .container-fluid{
+    width: calc(100% - 267px);
+    margin-left: 267px;
+    margin-right: 250px;
+    padding: 10px 40px;
+  transition: all 0.3s linear;
+ 
+}
+.wrapper.active .container-fluid{
+    width: calc(100% - 117px); 
+    margin-left: 117px;
+  } 
+.card{
+background-color: transparent;
+border: transparent;
+
+}

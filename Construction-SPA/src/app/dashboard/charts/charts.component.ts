@@ -33,7 +33,7 @@ export class ChartsComponent implements OnInit {
       }});
 
     const barChart = new Chart('barchart', {
-        type: 'doughnut',
+        type: 'bar',
         data: {
             labels: ['Red', 'Blue', 'Yellow'],
             datasets: [{
