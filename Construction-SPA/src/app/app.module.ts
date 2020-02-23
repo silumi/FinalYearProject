@@ -27,6 +27,7 @@ import { Content0Component } from './dashboard/content0/content0.component';
 import { AdsComponent } from './ads/ads.component';
 import { LocationComponent } from './location/location.component';
 import { FooterComponent } from './footer/footer.component';
+import { Charts2Component } from './charts2/charts2.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { FooterComponent } from './footer/footer.component';
     Content0Component,
     AdsComponent,
     LocationComponent,
-    FooterComponent
+    FooterComponent,
+    Charts2Component
   ],
   imports: [
     BrowserModule,
