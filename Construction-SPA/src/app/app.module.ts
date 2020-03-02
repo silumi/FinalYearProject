@@ -28,6 +28,12 @@ import { AdsComponent } from './ads/ads.component';
 import { LocationComponent } from './location/location.component';
 import { FooterComponent } from './footer/footer.component';
 import { Charts2Component } from './charts2/charts2.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { EmailComponent } from './email/email.component';
+import { ChatsComponent } from './chats/chats.component';
+import { InvoicesComponent } from './invoices/invoices.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
 
 
 @NgModule({
@@ -52,7 +58,13 @@ import { Charts2Component } from './charts2/charts2.component';
     AdsComponent,
     LocationComponent,
     FooterComponent,
-    Charts2Component
+    Charts2Component,
+    LoginComponent,
+    RegisterComponent,
+    EmailComponent,
+    ChatsComponent,
+    InvoicesComponent,
+    ComplaintsComponent
   ],
   imports: [
     BrowserModule,
