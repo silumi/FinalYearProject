@@ -28,9 +28,11 @@ namespace Construction_API
         {
               IServiceCollection serviceCollection = services.AddDbContext<DataContext>(x =>
             x.UseSqlServer("server=localhost; database = Construction; Integrated Security= SSPI"));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddCors();
-            services.AddControllers();
-            services.AddMvc();
+            services.AddScoped<IAuthRepository, AuthRepository> ();
+           
+        
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

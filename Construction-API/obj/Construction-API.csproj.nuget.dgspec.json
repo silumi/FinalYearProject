@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj": {}
+    "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj": {
+    "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj",
         "projectName": "Construction-API",
-        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj",
+        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +50,10 @@
             "Microsoft.EntityFrameworkCore.sqlServer": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
