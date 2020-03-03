@@ -1,12 +1,12 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-topnav',
+  templateUrl: './topnav.component.html',
+  styleUrls: ['./topnav.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class TopnavComponent implements OnInit {
   model: any = {};
   constructor(private authService: AuthService) { }
 
@@ -29,5 +29,4 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('token');
     console.log('loggedout');
   }
-
 }

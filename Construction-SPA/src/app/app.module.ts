@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TopnavComponent } from './dashboard/topnav/topnav.component';
 import { SearchComponent } from './dashboard/search/search.component';
 import { NotificationsComponent } from './dashboard/notifications/notifications.component';
 import { NewComponent } from './dashboard/new/new.component';
@@ -34,6 +34,8 @@ import { EmailComponent } from './email/email.component';
 import { ChatsComponent } from './chats/chats.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
+import { FormsModule } from '@angular/forms';
+import { TopnavComponent } from './topnav/topnav.component';
 
 
 @NgModule({
@@ -70,10 +72,13 @@ import { ComplaintsComponent } from './complaints/complaints.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FormsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj": {}
+    "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj": {
+    "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj",
         "projectName": "Construction-API",
-        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\Construction-API.csproj",
+        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\Construction-API\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

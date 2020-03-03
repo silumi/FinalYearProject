@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Construction_API.Dtos;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -11,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Construction_API.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
 

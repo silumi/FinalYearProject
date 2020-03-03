@@ -11,5 +11,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout() {
+    localStorage.removeItem('token');
+    console.log('loggedout');
+  }
 }
