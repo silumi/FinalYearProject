@@ -36,6 +36,7 @@ import { InvoicesComponent } from './invoices/invoices.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { FormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
+import { StartComponent } from './start/start.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { TopnavComponent } from './topnav/topnav.component';
     EmailComponent,
     ChatsComponent,
     InvoicesComponent,
-    ComplaintsComponent
+    ComplaintsComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,

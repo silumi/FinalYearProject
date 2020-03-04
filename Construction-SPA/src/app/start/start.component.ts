@@ -2,13 +2,13 @@ import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-topnav',
-  templateUrl: './topnav.component.html',
-  styleUrls: ['./topnav.component.css']
+  selector: 'app-start',
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.css']
 })
-export class TopnavComponent implements OnInit {
-  model: any = {};
-  registerMode = false;
+export class StartComponent implements OnInit {
+model: any = {};
+registerMode = false;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -22,11 +22,11 @@ export class TopnavComponent implements OnInit {
     });
     console.log(this.model);
   }
-  loggedIn() {
+  loggedIn(){
     const token = localStorage.getItem('token');
     return !!token;
   }
-  logout() {
+  logout(){
     localStorage.removeItem('token');
     console.log('loggedout');
   }

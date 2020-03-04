@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj": {}
+    "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj": {
+    "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj",
         "projectName": "Construction-API",
-        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\Construction-API.csproj",
+        "projectPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\Construction-API.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-API\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\FinalYearProject\\construction-api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
