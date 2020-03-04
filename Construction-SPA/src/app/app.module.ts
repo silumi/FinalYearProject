@@ -1,3 +1,4 @@
+import { AlerifyService } from './services/alerify.service';
 import { AuthService } from './services/auth.service';
 
 
@@ -82,7 +83,8 @@ import { ErrorInterceptorProvider } from './services/error-interceptor.service';
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
     AuthService,
-   ErrorInterceptorProvider
+   ErrorInterceptorProvider,
+   AlerifyService
   ],
   bootstrap: [AppComponent]
 })

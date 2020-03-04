@@ -1,7 +1,7 @@
 <div class="container"><div class="dropdown show" >
     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
       <div class="profile1">
-        <p>Welcome Silumi </p><img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+        <p> Welcome {{authService.decodedToken?.unique_name|titlecase}}</p><img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
       </div>
      
     </a>

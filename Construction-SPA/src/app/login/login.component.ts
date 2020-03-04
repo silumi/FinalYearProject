@@ -1,3 +1,4 @@
+import { AlerifyService } from './../services/alerify.service';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { error } from '@angular/compiler/src/util';
@@ -9,12 +10,12 @@ import { error } from '@angular/compiler/src/util';
 })
 export class LoginComponent implements OnInit {
 model: any = {};
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private alertify: AlerifyService) { }
 
   ngOnInit(): void { }
 login() {
   this.authService.login(this.model).subscribe(next => {
-    console.log('success');
+    this.alertify.success('success');
   // tslint:disable-next-line: no-shadowed-variable
   }, error => {
 console.log(error);
@@ -23,8 +24,7 @@ console.log(error);
   console.log(this.model);
 }
 loggedIn() {
-  const token = localStorage.getItem('token');
-  return !!token;
+  return this.authService.loggedIn();
 }
 logout() {
   localStorage.removeItem('token');
