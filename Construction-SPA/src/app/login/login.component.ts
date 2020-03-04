@@ -1,3 +1,4 @@
+import { Routes, Router } from '@angular/router';
 import { AlerifyService } from './../services/alerify.service';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { error } from '@angular/compiler/src/util';
 })
 export class LoginComponent implements OnInit {
 model: any = {};
-  constructor(private authService: AuthService, private alertify: AlerifyService) { }
+  constructor(private authService: AuthService, private alertify: AlerifyService, private router: Router) { }
 
   ngOnInit(): void { }
 login() {
@@ -20,14 +21,17 @@ login() {
   }, error => {
 console.log(error);
 
+  }, () => {
+this.router.navigate(['/dashboard']);
   });
-  console.log(this.model);
+
 }
 loggedIn() {
   return this.authService.loggedIn();
 }
 logout() {
   localStorage.removeItem('token');
-  console.log('loggedout');
+  this.alertify.success('logged out !');
+  this.router.navigate(['/start']);
 }
 }

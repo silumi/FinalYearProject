@@ -39,6 +39,7 @@ import { FormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
 import { StartComponent } from './start/start.component';
 import { ErrorInterceptorProvider } from './services/error-interceptor.service';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 
@@ -84,7 +85,8 @@ import { ErrorInterceptorProvider } from './services/error-interceptor.service';
   providers: [
     AuthService,
    ErrorInterceptorProvider,
-   AlerifyService
+   AlerifyService,
+   AuthGuard
   ],
   bootstrap: [AppComponent]
 })
