@@ -17,15 +17,16 @@ login() {
     console.log('success');
   // tslint:disable-next-line: no-shadowed-variable
   }, error => {
-console.log('fail');
+console.log(error);
+
   });
   console.log(this.model);
 }
-loggedIn(){
+loggedIn() {
   const token = localStorage.getItem('token');
   return !!token;
 }
-logout(){
+logout() {
   localStorage.removeItem('token');
   console.log('loggedout');
 }

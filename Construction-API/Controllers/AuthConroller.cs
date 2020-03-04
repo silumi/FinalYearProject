@@ -45,7 +45,8 @@ namespace Construction_API.Controllers
         [HttpPost ("login")]
 
         public async Task <IActionResult> Login (UserForLoginDto loginDto){
-           var userFromRepo = await _repo.Login(loginDto.username, loginDto.password);
+            
+            var userFromRepo = await _repo.Login(loginDto.username, loginDto.password);
             if(userFromRepo == null)
             return Unauthorized();
 

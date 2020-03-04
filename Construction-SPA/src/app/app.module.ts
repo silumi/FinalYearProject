@@ -37,6 +37,8 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 import { FormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
 import { StartComponent } from './start/start.component';
+import { ErrorInterceptorProvider } from './services/error-interceptor.service';
+
 
 
 @NgModule({
@@ -79,7 +81,8 @@ import { StartComponent } from './start/start.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
-    AuthService
+    AuthService,
+   ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
