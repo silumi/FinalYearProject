@@ -1,8 +1,9 @@
-.container-fluid{
+.wrapper .container-fluid{
     width: calc(100% - 250px);
     margin-left: 250px;
-    margin-top: 60px;
-    padding: 25px 40px;
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
   transition: all 0.3s linear;
  
 }

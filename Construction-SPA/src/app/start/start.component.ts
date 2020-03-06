@@ -22,7 +22,7 @@ registerMode = false;
     });
     console.log(this.model);
   }
-  loggedIn(){
+  loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
   }
@@ -30,7 +30,7 @@ registerMode = false;
     localStorage.removeItem('token');
     console.log('loggedout');
   }
-  registerToggle(){
+  registerToggle() {
     this.registerMode = !this.registerMode;
   }
 }

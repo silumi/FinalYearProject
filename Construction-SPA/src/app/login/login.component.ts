@@ -32,6 +32,6 @@ loggedIn() {
 logout() {
   localStorage.removeItem('token');
   this.alertify.success('logged out !');
-  this.router.navigate(['/start']);
+  this.router.navigate(['/']);
 }
 }

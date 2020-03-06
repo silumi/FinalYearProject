@@ -1,88 +1,30 @@
- <!-- <div class="container-fluid">
-  
-  <div class="row">
-      <div class="col-md-3">
-         
-      </div>
-      <div class="col-md-3"> <app-search></app-search></div>
-      <div class="col-md-2"></div>
-      <div class="col-md-2"><app-notifications></app-notifications></div>
-      <div class="col-md-2">
-          <app-profile></app-profile>
-      </div>
-  </div>
-  
-</div> -->
-<!-- <div class="wrapper">
-  <div class="top_navbar">
-		<div class="logo">
-			<a href="#">Building Mate</a>
-		</div>
-		<div class="top_menu">
-			
-				<span><app-search></app-search></span>
-				
-			
-			<div class="right_info">
-				<app-notifications></app-notifications>
-				<app-profile></app-profile>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- <div class="container-fluid"> -->
-  <!-- <div class="nav navbar-default" role="navigation"> -->
-    <!-- <div class="navbar navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">Demo</span>
-    </div> -->
-    <!-- <div class="navbar">
-      <div class="navbar-collapse collapse"> -->
-        <!-- <div class="navbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-        </div>
-        
-      </div> -->
-    <!-- </div> -->
-  <!-- </div>
-</div>  -->
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Building Mate</a>
+  <button *ngIf="loggedIn()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div *ngIf="loggedIn()" class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"><a class="nav-link">
-        <app-notifications></app-notifications>
-      </a>
-       
-      </li>
-      <li class="nav-item">
-        <app-search></app-search>
-      </li>
-    </ul>
-    <app-profile></app-profile>
+     
+        <li *ngIf="loggedIn()">
+          <app-notifications></app-notifications>
+        </li>
+        
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="loggedIn()">
+          <app-search></app-search>
+        </li>
+        <li *ngIf="loggedIn()">
+          <app-profile></app-profile>
+        </li>
+        <li>
+          <button *ngIf="loggedIn()" class="btn btn-success" (click)="logout()" style="margin-top: 10px;">Logout</button>
+        </li>
+        <li>
+          <button *ngIf="!loggedIn()" class="btn btn-success" (click)="registerToggle()">Register</button>
+        </li>
+      </ul>
+      
   </div>
-  <button *ngIf="loggedIn()" class="btn btn-success" (click)="logout()">Logout</button>
-  <button *ngIf="!loggedIn()" class="btn btn-success" (click)="registerToggle()">Register</button>
 </nav>
-<div *ngIf= "!registerMode">
-  <app-login></app-login>
-</div>
-<div *ngIf= "registerMode">
-  <app-register></app-register>
-</div>

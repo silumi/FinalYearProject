@@ -1,5 +1,6 @@
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topnav',
@@ -8,20 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopnavComponent implements OnInit {
   model: any = {};
-  registerMode = false;
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  login() {
-    this.authService.login(this.model).subscribe(next => {
-      console.log('success');
-    // tslint:disable-next-line: no-shadowed-variable
-    }, error => {
-  console.log('fail');
-    });
-    console.log(this.model);
-  }
+  // login() {
+  //   this.authService.login(this.model).subscribe(next => {
+  //     console.log('success');
+  //   // tslint:disable-next-line: no-shadowed-variable
+  //   }, error => {
+  // console.log('fail');
+  //   });
+  //   console.log(this.model);
+  // }
   loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
@@ -29,8 +29,9 @@ export class TopnavComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     console.log('loggedout');
+    this.router.navigate(['/']);
   }
-  registerToggle(){
-    this.registerMode = !this.registerMode;
+  registerToggle() {
+  this.router.navigate(['/register']);
   }
 }

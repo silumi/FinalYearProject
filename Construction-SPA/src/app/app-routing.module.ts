@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { LocationComponent } from './location/location.component';
 import { StartComponent } from './start/start.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,8 @@ import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: StartComponent},
+
+  {path: 'register', component: RegisterComponent},
    { path: '',
      runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
