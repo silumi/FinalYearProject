@@ -38,6 +38,32 @@
       $("[data-toggle=tooltip]").tooltip();
     });
   </script>
+  <!-- <script type="text/javascript">
+    $(document).ready(function() {
+    $('#linkClose').click(function() {
+       $('#divErrorText').hide('fade');
+    });
+    $('#btnRegister').click(function() {
+    $.ajax({
+      url: 'https://localhost:44393/api/account/register',
+      method: 'POST',
+      data: {
+        email: $('#txtEmail').val(),
+        password: $('#txtpassword').val(),
+        confirmPassword: $('#txtConfirmPassword').val()
+      },
+      success: function () {
+        $('#successModal').modal('show');
+      },
+      error: function (jqXHR) {
+        $('#divErrorText').text(jqXHR.responseText);
+        $('#divError').show('fade');
+      }
+    });
+   
+    });
+    });
+    </script> -->
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
