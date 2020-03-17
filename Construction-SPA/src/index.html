@@ -24,8 +24,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
 
-
-  <script>
+ <script>
     $(document).ready(function () {
       $(".hamburger").click(function () {
         $(".wrapper").toggleClass("active")
@@ -38,33 +37,36 @@
       $("[data-toggle=tooltip]").tooltip();
     });
   </script>
-  <!-- <script type="text/javascript">
-    $(document).ready(function() {
+  <script type="text/javascript">
+   $(document).ready(function () {
     $('#linkClose').click(function() {
-       $('#divErrorText').hide('fade');
-    });
-    $('#btnRegister').click(function() {
+  $('#divErrorText').hide('fade');
+   });
+        $('#btnLogin').click(function () {
+          console.log('successj!');
     $.ajax({
-      url: 'https://localhost:44393/api/account/register',
+      url: 'https://localhost:44393/token',
       method: 'POST',
-      data: {
-        email: $('#txtEmail').val(),
-        password: $('#txtpassword').val(),
-        confirmPassword: $('#txtConfirmPassword').val()
-      },
-      success: function () {
-        $('#successModal').modal('show');
-      },
-      error: function (jqXHR) {
-        $('#divErrorText').text(jqXHR.responseText);
-        $('#divError').show('fade');
-      }
-    });
-   
-    });
-    });
-    </script> -->
+      contentType: 'application/json',
+        data: {
+            username: $('#txtUsername').val(),
+            password: $('#txtpassword').val(),
+            grant_type: 'password'
+        },
+        success: function (response) {
 
+         
+           sessionStorage.setItem('accessToken', response.access_token);
+           window.location.href = '/dashboard';
+           console.log('success!');
+        },
+        error: function (jqXHR) {
+            $('#divErrorText').text(jqXHR.responseText);
+            $('#divError').show('fade');
+        }
+    });});
+  });
+    </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
