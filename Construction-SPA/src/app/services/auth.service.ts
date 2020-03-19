@@ -1,34 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {map} from 'rxjs/operators';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = 'https://localhost:44393/api/account/';
-  jwtHelper = new JwtHelperService();
-  decodedToken: any;
-  constructor(private http: HttpClient) { }
-  login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model)
-      .pipe(
-      map((response: any) => {
-        const user = response;
-        if (user) {
-          localStorage.setItem('token', user.token);
-          this.decodedToken = this.jwtHelper.decodeToken(user.token);
-          console.log(this.decodedToken);
-        }
-      })
-    );
+  baseUrl = 'https://localhost:44393';
+  constructor(private httpClient: HttpClient) { }
+
+  login(username, password) {
+    const data = 'username=' + username + '&password=' + password + '&grant_type=password';
+    const reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded' });
+    return this.httpClient.post(this.baseUrl + '/token', data, { headers: reqHeader });
   }
   register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
-  }
-  loggedIn() {
-    const token = localStorage.getItem('token');
-    return !this.jwtHelper.isTokenExpired(token);
+    return this.httpClient.post(this.baseUrl + '/api/account/register', model);
   }
 }

@@ -32,41 +32,10 @@
     });
 
     $(document).ready(function () {
-
-
-      $("[data-toggle=tooltip]").tooltip();
+       $("[data-toggle=tooltip]").tooltip();
     });
   </script>
-  <script type="text/javascript">
-   $(document).ready(function () {
-    $('#linkClose').click(function() {
-  $('#divErrorText').hide('fade');
-   });
-        $('#btnLogin').click(function () {
-          console.log('successj!');
-    $.ajax({
-      url: 'https://localhost:44393/token',
-      method: 'POST',
-      contentType: 'application/json',
-        data: {
-            username: $('#txtUsername').val(),
-            password: $('#txtpassword').val(),
-            grant_type: 'password'
-        },
-        success: function (response) {
 
-         
-           sessionStorage.setItem('accessToken', response.access_token);
-           window.location.href = '/dashboard';
-           console.log('success!');
-        },
-        error: function (jqXHR) {
-            $('#divErrorText').text(jqXHR.responseText);
-            $('#divError').show('fade');
-        }
-    });});
-  });
-    </script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 

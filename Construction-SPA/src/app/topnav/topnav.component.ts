@@ -23,11 +23,11 @@ export class TopnavComponent implements OnInit {
   //   console.log(this.model);
   // }
   loggedIn() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('userToken');
     return !!token;
   }
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('userToken');
     console.log('loggedout');
     this.router.navigate(['/']);
   }

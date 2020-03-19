@@ -13,15 +13,15 @@ registerMode = false;
 
   ngOnInit(): void {
   }
-  login() {
-    this.authService.login(this.model).subscribe(next => {
-      console.log('success');
-    // tslint:disable-next-line: no-shadowed-variable
-    }, error => {
-  console.log('fail');
-    });
-    console.log(this.model);
-  }
+  // login() {
+  //   this.authService.login(this.model).subscribe(next => {
+  //     console.log('success');
+  //   // tslint:disable-next-line: no-shadowed-variable
+  //   }, error => {
+  // console.log('fail');
+  //   });
+  //   console.log(this.model);
+  // }
   loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;

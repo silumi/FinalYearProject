@@ -10,12 +10,8 @@ import { from } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'Construction-SPA';
-  jwtHelper = new JwtHelperService();
-  constructor(private authService: AuthService) {}
-  ngOnInit() {
-    const token = localStorage.getItem('token');
-    if (token) {
-      this.authService.decodedToken = this.jwtHelper.decodeToken(token);
-    }
+
+  constructor() {}
+  ngOnInit() {}
   }
-}
+

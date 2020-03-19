@@ -1,53 +1,9 @@
-<!-- <form *ngIf="!loggedIn()" #loginForm ="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
-    <input class="form-control mr-sm-2" type="text" name="username" placeholder="username" required [(ngModel)]= "model.username">
-  
-    <input class="form-control mr-sm-2" type="password" name="password" placeholder="password" required [(ngModel)] = "model.password">
+ <div *ngIf= "isLogginError" class="red-text center error-message">
+   Incorrect Username or Password !!!
+ </div>
+ <form #loginForm ="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="doLogin(Username.value, Password.value)">
+    <input class="form-control mr-sm-2" #Username type="text" name="username" placeholder="username" required >
+    <input class="form-control mr-sm-2" #Password type="password" name="password" placeholder="password" required>
     <button [disabled]="!loginForm.valid" class="btn btn-primary my-2 my-sm-0" type="submit" >Login</button>
-  </form> -->
-  <div style="margin-top: 100px;">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="well">
-          <table class="table table-bordered">
-            <thead>
-              <tr class="success" style="background-color: khaki;">
-                <td colspan="2">
-                  Existing User Login
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Username </td>
-                <td>
-                  <input type="text" id="txtUsername" name="username" placeholder="Username" required>
-                </td>
-              </tr>
-              <tr>
-                <td>Password</td>
-                <td>
-                  <input type="password" id="txtpassword" name="password" placeholder="Password" required>
-                </td>
-              </tr>
-              <tr class="success" style="background-color: khaki;">
-                <td colspan="2">
-                  <input id="btnLogin" class="btn btn-success" type="button" value="Login">
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div id="divError" class="alert alert-danger collapse">
-            <a id="linkClose" class="close" href="">&times;</a>
-            <div id="divErrorText">
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    
-
-  </div>
-  
-  
-  
+  </form> 
+ 

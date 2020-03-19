@@ -1,8 +1,8 @@
-import { Routes, Router } from '@angular/router';
-import { AlerifyService } from './../services/alerify.service';
-import { AuthService } from './../services/auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import {  Router } from '@angular/router';
+import { AlerifyService } from '../services/alerify.service';
+import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-login',
@@ -10,28 +10,26 @@ import { error } from '@angular/compiler/src/util';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-model: any = {};
-  constructor(private authService: AuthService, private alertify: AlerifyService, private router: Router) { }
+isLogginError = false;
+constructor(private authService: AuthService, private alertify: AlerifyService, private router: Router) { }
 
   ngOnInit(): void { }
-login() {
-  this.authService.login(this.model).subscribe(next => {
-    this.alertify.success('success');
-  // tslint:disable-next-line: no-shadowed-variable
-  }, error => {
-console.log(error);
 
-  }, () => {
-this.router.navigate(['/dashboard']);
-  });
+  doLogin(userName, password) {
+    this.authService.login(userName, password).subscribe((data: any) => {
+      localStorage.setItem('userToken', data.access_token);
+      localStorage.setItem('UserName', data.userName);
+      this.alertify.success('Login Success!');
+      this.router.navigate(['/dashboard']);
+    },
+      (err: HttpErrorResponse) => {
+        this.isLogginError = true;
+      });
+  }
 
-}
-loggedIn() {
-  return this.authService.loggedIn();
-}
-logout() {
-  localStorage.removeItem('token');
-  this.alertify.success('logged out !');
-  this.router.navigate(['/']);
-}
+  logout() {
+    localStorage.removeItem('userToken');
+    this.alertify.success('logged out !');
+    this.router.navigate(['/']);
+  }
 }
