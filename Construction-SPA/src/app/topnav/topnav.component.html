@@ -1,30 +1,38 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Building Mate</a>
-  <button *ngIf="loggedIn()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-     
-        <li *ngIf="loggedIn()">
-          <app-notifications></app-notifications>
-        </li>
+<div class="wrapper">
+  <div class="container-fluid">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Building Mate</a>
+    <button *ngIf= "loggedIn()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+       <li class="nav navbar-item">
+          <li *ngIf= "loggedIn()">
+            <app-notifications></app-notifications>
+          </li>
+         
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li *ngIf= "loggedIn()">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#cartModal" style="margin-top: 10px;">Cart</button>
+          </li>
+          <li *ngIf= "loggedIn()">
+            <app-search></app-search>
+          </li>
+          <li *ngIf= "loggedIn()">
+            <app-profile></app-profile>
+          </li>
+          <li>
+            <button *ngIf= "loggedIn()" class="btn btn-success" (click)="logout()" style="margin-top: 10px;">Logout</button>
+          </li>
+          <li>
+            <button *ngIf= "!loggedIn()" class="btn btn-success" (click)="registerToggle()">Register</button>
+          </li>
+        </ul>
         
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li *ngIf="loggedIn()">
-          <app-search></app-search>
-        </li>
-        <li *ngIf="loggedIn()">
-          <app-profile></app-profile>
-        </li>
-        <li>
-          <button *ngIf="loggedIn()" class="btn btn-success" (click)="logout()" style="margin-top: 10px;">Logout</button>
-        </li>
-        <li>
-          <button *ngIf="!loggedIn()" class="btn btn-success" (click)="registerToggle()">Register</button>
-        </li>
-      </ul>
-      
-  </div>
-</nav>
+    </div>
+  </nav>
+ 
+</div>
+</div>

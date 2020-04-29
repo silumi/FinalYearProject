@@ -15,3 +15,7 @@
 .dropdown show .profile1{
     float: right;
 }
+img{
+    border: 2px gainsboro solid;
+    display: inline;
+}

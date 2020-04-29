@@ -1,0 +1,26 @@
+.wrapper .container-fluid{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    margin-right: 250px;
+    
+    padding: 10px 40px;
+  transition: all 0.3s linear;
+ 
+}
+.wrapper.active .container-fluid{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  }
+.img-thumbnail{
+    margin: 25px;
+    width: 85%;
+    height: 85%;
+}
+.card-body{
+    padding: 0 25px;
+}
+.card-footer{
+    padding: 10px 15px;
+    background-color: #fff;
+    border-top: none;
+}

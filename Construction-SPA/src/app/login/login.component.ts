@@ -3,6 +3,7 @@ import {  Router } from '@angular/router';
 import { AlerifyService } from '../services/alerify.service';
 import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-login',
@@ -10,25 +11,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-isLogginError = false;
+  model: any = {};
+
 constructor(private authService: AuthService, private alertify: AlerifyService, private router: Router) { }
 
   ngOnInit(): void { }
 
-  doLogin(userName, password) {
-    this.authService.login(userName, password).subscribe((data: any) => {
-      localStorage.setItem('userToken', data.access_token);
-      localStorage.setItem('UserName', data.userName);
+  login() {
+    this.authService.login(this.model).subscribe(next => {
       this.alertify.success('Login Success!');
       this.router.navigate(['/dashboard']);
     },
-      (err: HttpErrorResponse) => {
-        this.isLogginError = true;
-      });
+      // tslint:disable-next-line: no-shadowed-variable
+      error => {
+        this.alertify.warning(error);
+      })
+      ;
   }
-
-  logout() {
-    localStorage.removeItem('userToken');
+loggedIn() {
+  const token = localStorage.getItem('token');
+  return !!token;
+}
+  loggedout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.authService.decodedToken = null;
+    this.authService.currentUser = null;
     this.alertify.success('logged out !');
     this.router.navigate(['/']);
   }

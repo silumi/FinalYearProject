@@ -1,0 +1,14 @@
+<div class="card" style="width: 300px; margin-right: 20px; margin-bottom: 10px;">
+    <img class="card-img-top" src= "{{item.url}}" alt="{{item.itemName}}" style=" height: 250px;">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{item.itemType}}</h5>
+      <h5 class="card-subtitle mb-2 text-muted">{{item.itemName}}</h5>
+      <h6 class="card-text">{{item.itemPrice}}</h6>
+      <h6 class="card-subtitle">{{item.shopName}} {{item.city}}</h6>
+     
+      <p>*****</p>
+      
+      <a class="btn btn-primary" style="width: 250px;" [routerLink] = "['/items/',item.itemId]">Read More</a>
+      
+    </div>
+  </div>

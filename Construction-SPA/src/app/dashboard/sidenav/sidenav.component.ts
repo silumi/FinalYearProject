@@ -11,5 +11,8 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
 }

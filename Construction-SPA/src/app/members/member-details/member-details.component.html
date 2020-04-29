@@ -1,0 +1,84 @@
+<div class="wrapper">
+      <div class="container-fluid" style="padding-top: 100px;">
+            <h2> {{users.firstName}}{{users.lastName}}</h2>
+            <div class="row">
+                
+                  <div class="col-sm-4">
+      <div class="card">
+            <img class="card-img-top img-thumbnail" src="{{users.photoUrl}}" alt="{{users.userName}}">
+            <div class="card-body">
+                  <div>
+                        
+                        <h3>{{users.serviceType}}</h3>
+                  </div>
+                  <div>
+                        <strong>Chargers: </strong>
+                        <p>{{users.chargers}}</p>
+                  </div>
+                  <div>
+                        <strong>Contact: </strong>
+                        <p>{{users.contactNo}}</p>
+                  </div>
+                  <div>
+                        <strong>Location: </strong>
+                        <p>{{users.address}}, {{users.city}}</p>
+                  </div>
+      
+      
+      <div>
+            <strong>Ratings:</strong>
+            <p>*****</p>
+      </div>
+      
+      
+      </div>
+      <div class="card-footer">
+            <div class="btn-group d-flex">
+                   <button class="btn btn-primary w-100">Message</button>
+                   <button class="btn btn-success w-100">Request</button> 
+            </div>
+      </div>
+      </div>
+                  </div>
+                  <div class="col-sm-8">
+      <div class="tab-panel">
+            <tabset class="member-tabset">
+                  <tab heading="About">
+                        <h4>Description </h4>
+                        <p>{{users.about}}</p>
+                        <h4>Looking For?</h4>
+                        <p>{{users.lookingFor}}</p>
+                        <div>
+                              <strong>Age:</strong> <p>{{users.age}}</p>
+                        </div>
+                        <div>
+                              <strong>Member since:</strong>
+                              <p>{{users.dateCreated}}</p>
+                        </div>
+                            
+                              
+                                    <ngx-gallery [options]= "galleryOptionsUser" [images] ="galleryImagesUser" class ="ngx-gallery"></ngx-gallery>
+            </tab>
+                  <tab heading="Experience">
+                       <h4>Experience</h4>
+                        <p>{{users.experience}}</p>
+                      
+
+                        <ngx-gallery [options]= "galleryOptions" [images] ="galleryImages" class ="ngx-gallery"></ngx-gallery>
+                        
+                  </tab>
+                  <tab heading="Reviews">
+                        <h4>Reviews</h4>
+                       <p>Reviews comes here</p>
+                  </tab>
+                  <tab heading="Messages">
+                        <h4>Messages</h4>
+                       <p>Messages comes here</p>
+                  </tab>
+            </tabset>
+      </div>
+      </div>
+                  </div>
+            </div>
+      </div>
+

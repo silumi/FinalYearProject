@@ -1,5 +1,5 @@
 import { AuthService } from './../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,25 +9,18 @@ import { Router } from '@angular/router';
 })
 export class TopnavComponent implements OnInit {
   model: any = {};
+  // tslint:disable-next-line: ban-types
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  // login() {
-  //   this.authService.login(this.model).subscribe(next => {
-  //     console.log('success');
-  //   // tslint:disable-next-line: no-shadowed-variable
-  //   }, error => {
-  // console.log('fail');
-  //   });
-  //   console.log(this.model);
-  // }
   loggedIn() {
-    const token = localStorage.getItem('userToken');
+    const token = localStorage.getItem('token');
     return !!token;
   }
   logout() {
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('token');
     console.log('loggedout');
     this.router.navigate(['/']);
   }

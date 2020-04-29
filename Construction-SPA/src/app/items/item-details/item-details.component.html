@@ -1,0 +1,73 @@
+<div class="wrapper">
+  <div class="container-fluid" style="padding-top: 100px;">
+    <h2> {{items.itemName}}</h2>
+    <div class="row">
+  
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-thumbnail" src= "{{items.url}}" alt="{{items.itemName}}">
+          <div class="card-body">
+            <div>
+              <strong>Item Name: </strong>
+              <p>{{items.itemName}}</p>
+            </div>
+            <div>
+              <h6>{{items.itemType}}</h6>
+            </div>
+  
+            <div>
+              <strong>Price: </strong>
+              <p>{{items.itemPrice}}</p>
+            </div>
+            <div>
+              <strong>Ratings:</strong>
+              <p>*****</p>
+            </div>
+            <div>
+              <strong>Shop: </strong>
+              <p>{{items.shopName}}, {{items.city}}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group d-flex">
+              <button class="btn btn-primary w-100">Message</button>
+              <button class="btn btn-success w-100">Add To Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="tab-panel">
+          <tabset class="member-tabset">
+            <tab heading="About">
+              <h3>{{items.itemName}}</h3>
+              <h4>Description </h4>
+              <p>{{items.description}}</p>
+              <h4>Amount Available:</h4>
+              <p>{{items.amountAvailable}}</p>
+              <div>
+                <strong>Date Added:</strong>
+                <p>{{items.dateAdded}}</p>
+                
+              </div>
+              <div>
+                <strong>{{items.contactNo}}</strong>
+              </div>
+              <div>
+                <strong>Location:</strong>
+                <p>{{items.shopName}} {{items.address}}{{items.city}}</p>
+              </div>
+            </tab>
+            <tab heading="Photos">
+              <ngx-gallery [options]= "galleryOptions" [images]= "galleryImages" class ="ngx-gallery"></ngx-gallery>
+            </tab>
+            <tab heading="Reviews">
+              <h4>Reviews goes here</h4>
+            </tab>
+          </tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

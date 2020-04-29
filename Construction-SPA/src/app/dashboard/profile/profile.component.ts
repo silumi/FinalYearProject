@@ -1,6 +1,7 @@
+import { User } from './../../_models/Users';
 import { logging } from 'protractor';
 import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,13 +12,21 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
   user: any = {};
+  photoUrl: string;
+  @Input() users: User;
   constructor(public authService: AuthService, private router: Router) { }
   ngOnInit(): void {
-    this.user = localStorage.getItem('UserName');
+    this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
   logout() {
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.authService.decodedToken = null;
+    this.authService.currentUser = null;
     console.log('loggedout');
     this.router.navigate(['/']);
+  }
+  loggedIn() {
+    return this.authService.loggedIn();
   }
 }

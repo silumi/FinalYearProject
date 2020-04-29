@@ -1,0 +1,111 @@
+<div class="wrapper">
+  <div class="container-fluid" style="padding-top: 100px;">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2> Your Profile</h2>
+      </div>
+      <div class="col-sm-8">
+        <div *ngIf="editForm.dirty" class="alert alert-info">
+          <strong>Information:</strong>You have made changes. Any unsaved changes will be lost!
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-thumbnail" src="{{photoUrl}}" alt="{{users.userName}}">
+          <div class="card-body">
+            <div>
+
+              <h3>{{users.serviceType}}</h3>
+            </div>
+            <div>
+              <strong>Chargers: </strong>
+              <p>{{users.chargers}}</p>
+            </div>
+            <div>
+              <strong>Contact: </strong>
+              <p>{{users.contactNo}}</p>
+            </div>
+            <div>
+              <strong>Location: </strong>
+              <p>{{users.address}}, {{users.city}}</p>
+            </div>
+
+
+            <div>
+              <strong>Ratings:</strong>
+              <p>*****</p>
+            </div>
+
+
+          </div>
+          <div class="card-footer">
+
+
+            <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="tab-panel">
+          <tabset class="member-tabset">
+            <tab heading="Edit Profile">
+              <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
+                <h4>Personal Details:</h4>
+                <div class="form-inline">
+                  <label for="firstName">First Name</label>
+                  <input class="form-control" type="text" name="firstName" [(ngModel)]="users.firstName">
+                  <label for="lastName">Last Name</label>
+                  <input class="form-control" type="text" name="lastName" [(ngModel)]="users.lastName">
+                </div>
+                <br>
+                <div class="form-inline">
+                  <label for="gender">Gender</label>
+                  <input class="form-control" type="text" name="gender" [(ngModel)]="users.gender">
+                  <label for="age">Age</label>
+                  <input class="form-control" type="text" name="age" [(ngModel)]="users.age">
+                </div>
+                <h4>Description </h4>
+                <textarea name="About" rows="6" class="form-control" [(ngModel)]="users.about"></textarea>
+                <h4>Looking For?</h4>
+                <textarea name="Looking For?" rows="6" class="form-control" [(ngModel)]="users.lookingFor"></textarea>
+
+
+                <h4>Location Details:</h4>
+                <div class="form-inline">
+                  <label for="address">Address</label>
+                  <input class="form-control" type="text" name="address" [(ngModel)]="users.address">
+                  <label for="city">City</label>
+                  <input class="form-control" type="text" name="city" [(ngModel)]="users.city">
+                  <label for="postalCode">Postal Code</label>
+                  <input class="form-control" type="text" name="postalCode" [(ngModel)]="users.postalCode">
+                </div>
+                <h4>Contact Details:</h4>
+                <div class="form-inline">
+                  <label for="contactNo">Contact Number</label>
+                  <input class="form-control" type="text" name="contactNo" [(ngModel)]="users.contactNo">
+                </div>
+              </form>
+            </tab>
+            <tab heading="Edit User Photos">
+              <app-user-photo-editor [userPhoto]="users.photos"
+              (getMemberPhotoChange)= "updateMainPhoto($event)"
+              
+              ></app-user-photo-editor>
+            </tab>
+            <tab *ngIf="users.isJobSeeker== true" heading="Edit Experience">
+              <h4>Experience</h4>
+              <textarea name="Experience" rows="6" class="form-control" [(ngModel)]="users.experience"></textarea>
+            </tab>
+            <tab *ngIf="users.isJobSeeker== true" heading="Edit work Photos">
+              <app-service-photo-edit [servicePhoto]="users.servicePhotos"></app-service-photo-edit>
+            </tab>
+          </tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
