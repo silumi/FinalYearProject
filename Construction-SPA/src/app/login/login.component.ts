@@ -4,6 +4,7 @@ import { AlerifyService } from '../services/alerify.service';
 import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { error } from 'protractor';
+import { User } from '../_models/Users';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,6 @@ import { error } from 'protractor';
 })
 export class LoginComponent implements OnInit {
   model: any = {};
-
 constructor(private authService: AuthService, private alertify: AlerifyService, private router: Router) { }
 
   ngOnInit(): void { }

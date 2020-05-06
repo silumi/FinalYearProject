@@ -4,7 +4,7 @@
       aria-expanded="false" style="color: black;">
       <div class="profile1">
         <a class="text-muted"> Welcome {{authService.decodedToken?.unique_name|titlecase}} </a><img
-          src="{{photoUrl}}" width="40"
+          src="{{photoUrl || '../../../../../assets/user.png'}}" width="40"
           height="40" class="rounded-circle">
       </div>
     </a>

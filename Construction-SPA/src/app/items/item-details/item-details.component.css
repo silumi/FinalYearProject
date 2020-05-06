@@ -10,13 +10,14 @@
 .wrapper.active .container-fluid{
     width: calc(100% - 100px); 
     margin-left: 100px;
-  } 
+  }
+.ngx-gallery { display: inline-block; margin-bottom: 20px; } 
 .img-thumbnail{
     margin: 25px;
     width: 85%;
     height: 85%;
 }
-.ngx-gallery { display: inline-block; margin-bottom: 20px; }
+
 .card-body{
     padding: 0 25px;
 }

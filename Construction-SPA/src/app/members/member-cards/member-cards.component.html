@@ -1,6 +1,6 @@
 
 <div class="card" style="width: 300px; margin-right: 20px; margin-bottom: 10px;">
-  <img class="card-img-top" src= "{{user.photoUrl}}" alt="{{user.userName}}" style=" height: 250px;">
+  <img class="card-img-top" src= "{{user.photoUrl || '../../../../../assets/user.png'}}" alt="{{user.userName}}" style=" height: 250px;">
   <div class="card-body text-center">
     <h5 class="card-title">{{user.serviceType}}</h5>
     <h5 class="card-subtitle mb-2 text-muted">{{user.firstName}}{{user.lastName}}</h5>

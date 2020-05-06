@@ -26,15 +26,15 @@ galleryImages: NgxGalleryImage[];
       {
        width: '500px',
        height: '500px',
-         imagePercent: 100,
+       imagePercent: 100,
         thumbnailsColumns: 4,
         imageAnimation: NgxGalleryAnimation.Slide,
         preview: false
     }
     ];
-    this.galleryImages = this.getImages();
+    this.galleryImages = this.getItemImages();
  }
-getImages() {
+getItemImages() {
     const imageUrl = [];
      // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.items.itemPhoto.length; i++) {

@@ -1,11 +1,14 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MemberListResolver } from './_resolvers/member-list.resolvers';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ItemsService } from './services/items.service';
 import { AlerifyService } from './services/alerify.service';
 import { AuthService } from './services/auth.service';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -39,7 +42,7 @@ import { EmailComponent } from './email/email.component';
 import { ChatsComponent } from './chats/chats.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
 import { StartComponent } from './start/start.component';
 import { ErrorInterceptorProvider } from './services/error-interceptor.service';
@@ -62,6 +65,14 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolvers/member-edit.resolvers';
 import { ServicePhotoEditComponent } from './members/service-photo-edit/service-photo-edit.component';
 import { UserPhotoEditorComponent } from './members/user-photo-editor/user-photo-editor.component';
+import { SupplierComponent } from './supplier/supplier.component';
+import { ItemSmallCardsComponent } from './supplier/item-small-cards/item-small-cards.component';
+import { ItemContent1Component } from './supplier/item-content1/item-content1.component';
+import { ItemOrdersComponent } from './supplier/item-orders/item-orders.component';
+import { StatisticComponent } from './supplier/statistic/statistic.component';
+import { MessagesResolver } from './_resolvers/messages.resolvers';
+import { MessagesComponent } from './messages/messages.component';
+
 
 
 export function tokenGetter() {
@@ -111,17 +122,27 @@ export function tokenGetter() {
     WorkersComponent,
     MemberEditComponent,
     ServicePhotoEditComponent,
-    UserPhotoEditorComponent
+    UserPhotoEditorComponent,
+    SupplierComponent,
+    ItemSmallCardsComponent,
+    ItemContent1Component,
+    ItemOrdersComponent,
+    StatisticComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FileUploadModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     HttpClientModule,
     NgxGalleryModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
     TabsModule.forRoot(),
+    PaginationModule.forRoot(),
     JwtModule.forRoot({
       config: {
         // tslint:disable-next-line: object-literal-shorthand
@@ -142,6 +163,7 @@ export function tokenGetter() {
    MemberListResolver,
    MemberEditResolver,
    UserServiceService,
+   MessagesResolver,
    ItemsService,
    AuthGuard,
    PreventUnsavedChanges

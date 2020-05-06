@@ -1,3 +1,4 @@
+import { SupplierComponent } from './supplier/supplier.component';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
 import { MemberListResolver } from './_resolvers/member-list.resolvers';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
@@ -17,6 +18,8 @@ import { ItemListResolver } from './_resolvers/items-list.resolvers';
 import { MemberListComponent } from './members/memberlist.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolvers';
+import { MessagesResolver } from './_resolvers/messages.resolvers';
+import { MessagesComponent } from './messages/messages.component';
 
 
 const routes: Routes = [
@@ -33,7 +36,9 @@ const routes: Routes = [
      { path: 'members/edit', component: MemberEditComponent, resolve: {user: MemberEditResolver}, canDeactivate: [PreventUnsavedChanges]},
      { path: 'members', component: MemberListComponent, resolve: {services: MemberListResolver} },
      { path: 'members/:id', component: MemberDetailsComponent, resolve: {services: MemberDetailResolver}},
+     {path: 'messages', component: MessagesComponent, resolve: {messages: MessagesResolver}},
      { path: 'dashboard', component: DashboardComponent},
+     { path: 'supplier', component: SupplierComponent},
      { path: 'cart', component: ShoppingCartComponent}
   ]},
     {path: '**', redirectTo: '', pathMatch: 'full'}

@@ -9,12 +9,14 @@ import { User } from '../_models/Users';
 
 @Injectable()
 export class MemberListResolver implements Resolve<User[]> {
+    pageNumber = 1;
+    pageSize = 3;
 
 constructor(private userService: UserServiceService, private router: Router, private alertify: AlerifyService) {}
 
 resolve(route: ActivatedRouteSnapshot): Observable<User[]> {
     // tslint:disable-next-line: no-string-literal
-    return this.userService.getUsers().pipe(
+    return this.userService.getUsers(this.pageNumber, this.pageSize).pipe(
         // tslint:disable-next-line: no-shadowed-variable
         catchError(error => {
             this.alertify.error('Problem retrieving data');

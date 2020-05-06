@@ -40,8 +40,8 @@ export class AuthService {
       })
     );
   }
-  register(model: any) {
-    return this.httpClient.post(this.baseUrl + 'auth/register', model);
+  register(user: User) {
+    return this.httpClient.post(this.baseUrl + 'auth/register', user);
   }
   loggedIn() {
     const token = localStorage.getItem('token');

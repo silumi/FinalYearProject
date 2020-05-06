@@ -8,19 +8,11 @@ import { AuthService } from '../services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   model: any = {};
+ 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
-  // login() {
-  //   this.authService.login(this.model).subscribe(next => {
-  //     console.log('success');
-  //   // tslint:disable-next-line: no-shadowed-variable
-  //   }, error => {
-  // console.log('fail');
-  //   });
-  //   console.log(this.model);
-  // }
   loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;

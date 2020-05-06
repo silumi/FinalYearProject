@@ -3,5 +3,5 @@ export interface ItemPhoto {
     dateAdded: Date;
     description: string;
     url: string;
-
+    isMain: boolean;
 }

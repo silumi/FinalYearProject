@@ -1,3 +1,4 @@
+import { User } from './../../_models/Users';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./small-cards.component.css']
 })
 export class SmallCardsComponent implements OnInit {
-
+user: User;
   constructor() { }
 
   ngOnInit(): void {

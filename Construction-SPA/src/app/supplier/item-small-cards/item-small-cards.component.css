@@ -1,0 +1,51 @@
+.wrapper .container-fluid{
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+  transition: all 0.3s linear;
+ 
+}
+.container-fluid .card-deck .card{
+	height: 150px;
+}
+.card-header bg-dribbble content-center{
+	height: 100px;
+	
+}
+.wrapper.active .container-fluid{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  } 
+  .card-header bg-dribbble content-center p{
+    font-size: 100px;
+  }
+  .fa fa-exclamation-triangle{
+	  margin-right: 20px;
+  }
+  .wrapper.active .sidebar_menu{
+    width: 100px;
+}
+.wrapper.active .hamburger .fa-arrow-right{
+    display: block !important;
+
+}
+.wrapper.active .hamburger .fa-arrow-left{
+    display: none;
+}
+.wrapper.active .sidebar_menu ul li a .list{
+     display: none;
+}
+/* .wrapper.active .container{
+    width: calc(100% - 100px); 
+    margin-left: 100px;
+  } */
+  .container .card-deck .card{
+	height: 50px;
+}
+#cards{
+    background-color: palevioletred;
+}
+
+  
