@@ -9,9 +9,8 @@ import { ItemsService } from './services/items.service';
 import { AlerifyService } from './services/alerify.service';
 import { AuthService } from './services/auth.service';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, Pipe } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +25,7 @@ import { SmallCardsComponent } from './dashboard/small-cards/small-cards.compone
 import { ContentComponent } from './dashboard/content/content.component';
 import { ChartsComponent } from './dashboard/charts/charts.component';
 import { CommentComponent } from './dashboard/comment/comment.component';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -72,6 +72,7 @@ import { ItemOrdersComponent } from './supplier/item-orders/item-orders.componen
 import { StatisticComponent } from './supplier/statistic/statistic.component';
 import { MessagesResolver } from './_resolvers/messages.resolvers';
 import { MessagesComponent } from './messages/messages.component';
+import { DateAgoPipe } from './Pipes/date-ago.pipe';
 
 
 
@@ -128,7 +129,8 @@ export function tokenGetter() {
     ItemContent1Component,
     ItemOrdersComponent,
     StatisticComponent,
-    MessagesComponent
+    MessagesComponent,
+    DateAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -170,4 +172,5 @@ export function tokenGetter() {
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
