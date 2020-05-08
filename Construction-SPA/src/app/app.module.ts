@@ -1,6 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { FileUploadModule } from 'ng2-file-upload';
 import { MemberListResolver } from './_resolvers/member-list.resolvers';
@@ -73,6 +74,7 @@ import { StatisticComponent } from './supplier/statistic/statistic.component';
 import { MessagesResolver } from './_resolvers/messages.resolvers';
 import { MessagesComponent } from './messages/messages.component';
 import { DateAgoPipe } from './Pipes/date-ago.pipe';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 
@@ -130,7 +132,8 @@ export function tokenGetter() {
     ItemOrdersComponent,
     StatisticComponent,
     MessagesComponent,
-    DateAgoPipe
+    DateAgoPipe,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -141,6 +144,7 @@ export function tokenGetter() {
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     NgxGalleryModule,
+    ButtonsModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     FormsModule,
     TabsModule.forRoot(),

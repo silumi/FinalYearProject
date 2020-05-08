@@ -34,7 +34,7 @@
       </div>
       <div class="card-footer">
             <div class="btn-group d-flex">
-                   <button class="btn btn-primary w-100">Message</button>
+                   <button class="btn btn-primary w-100" (click)= "selectTabs(3)">Message</button>
                    <button class="btn btn-success w-100">Request</button> 
             </div>
       </div>
@@ -42,7 +42,7 @@
                   </div>
                   <div class="col-sm-8">
       <div class="tab-panel">
-            <tabset class="member-tabset">
+            <tabset class="member-tabset" #memberTabs>
                   <tab heading="About">
                         <h4>Description </h4>
                         <p>{{users.about}}</p>
@@ -68,17 +68,16 @@
                         
                   </tab>
                   <tab heading="Reviews">
-                        <h4>Reviews</h4>
-                       <p>Reviews comes here</p>
+                    <h4>Reviews</h4>
+                    <p>Reviews comes here</p>
                   </tab>
                   <tab heading="Messages">
-                        <h4>Messages</h4>
-                       <p>Messages comes here</p>
+                    <app-member-messages [recepientId]="users.id"></app-member-messages>
                   </tab>
-            </tabset>
-      </div>
-      </div>
+                  </tabset>
                   </div>
-            </div>
-      </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
 

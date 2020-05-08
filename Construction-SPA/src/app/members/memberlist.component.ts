@@ -13,6 +13,8 @@ import { User } from '../_models/Users';
 })
 export class MemberListComponent implements OnInit {
 user: User[];
+users: User = JSON.parse(localStorage.getItem('service'));
+userParams: any = {};
 pagination: Pagination;
   constructor(private usersService: UserServiceService, private alertyfy: AlerifyService, private route: ActivatedRoute) { }
 
@@ -23,13 +25,22 @@ pagination: Pagination;
       // tslint:disable-next-line: no-string-literal
       this.pagination = data ['services'].pagination;
     });
+
+    this.userParams.minAge = 18;
+    this.userParams.maxAge = 75;
+    this.userParams.orderBy = 'lastActive';
   }
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadUsers();
   }
+  resetFilters() {
+    this.userParams.minAge = 18;
+    this.userParams.maxAge = 75;
+    this.loadUsers();
+  }
   loadUsers() {
-    this.usersService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage)
+    this.usersService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams)
       .subscribe((res: PaginatedResult<User[]>) => {
         this.user = res.result;
         this.pagination = res.pagination;

@@ -33,5 +33,20 @@ return this.http.get<Message[]>(this.baseUrl + 'user/' + id + '/messages', {obse
     })
   );
 }
-  }
+
+getMessageThread(id: number, recepientId: number) {
+  return this.http.get<Message[]>(this.baseUrl + 'user/' + id + '/messages/thread/' + recepientId);
+}
+sendMessage(id: number, message: Message) {
+  return this.http.post(this.baseUrl + 'user/' + id + '/messages', message);
+}
+
+deleteMessage(id: number, userId: number) {
+  return this.http.post(this.baseUrl + 'user/' + userId + '/messages/' + id, {});
+}
+
+markAsRead(userId: number, messageId: number) {
+  this.http.post(this.baseUrl + 'user/' + userId + '/messages/' + messageId + '/read', {})
+    .subscribe();
+}  }
 

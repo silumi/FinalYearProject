@@ -10,7 +10,7 @@ import { Message } from '../_models/Message';
 @Injectable()
 export class MessagesResolver implements Resolve<Message[]> {
     pageNumber = 1;
-    pageSize = 3;
+    pageSize = 6;
     messageContainer = 'Unread';
 
     constructor(private messagesService: MessagesService, private router: Router,
