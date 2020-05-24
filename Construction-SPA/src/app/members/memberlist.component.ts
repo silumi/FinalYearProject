@@ -1,5 +1,5 @@
 import { Pagination, PaginatedResult } from './../_models/Pagination';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AlerifyService } from '../services/alerify.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,9 +14,12 @@ import { User } from '../_models/Users';
 export class MemberListComponent implements OnInit {
 user: User[];
 users: User = JSON.parse(localStorage.getItem('service'));
+// serviceTypeList = [{value: 'Horroscope', display: 'Horroscope'}, {value: 'carpenter', display: 'carpenter'}];
 userParams: any = {};
 pagination: Pagination;
-  constructor(private usersService: UserServiceService, private alertyfy: AlerifyService, private route: ActivatedRoute) { }
+textItems = false;
+  constructor(private usersService: UserServiceService, private alertyfy: AlerifyService,
+              private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
@@ -25,18 +28,18 @@ pagination: Pagination;
       // tslint:disable-next-line: no-string-literal
       this.pagination = data ['services'].pagination;
     });
-
-    this.userParams.minAge = 18;
-    this.userParams.maxAge = 75;
+    this.userParams.minChargers = 100;
+    this.userParams.maxChargers = 10000;
     this.userParams.orderBy = 'lastActive';
+    this.loadUsers();
   }
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadUsers();
   }
   resetFilters() {
-    this.userParams.minAge = 18;
-    this.userParams.maxAge = 75;
+    this.userParams.minChargers = 100;
+    this.userParams.maxChargers = 10000;
     this.loadUsers();
   }
   loadUsers() {
@@ -44,8 +47,12 @@ pagination: Pagination;
       .subscribe((res: PaginatedResult<User[]>) => {
         this.user = res.result;
         this.pagination = res.pagination;
+
     }, error => {
       this.alertyfy.error(error);
     });
+  }
+  textItemToggle() {
+    this.textItems = true;
   }
 }

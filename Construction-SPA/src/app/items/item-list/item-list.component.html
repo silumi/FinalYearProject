@@ -1,5 +1,58 @@
 <div class="wrapper">
   <div class="container-fluid" style="padding-top: 100px;">
+    <div class="text-center mt-3" *ngIf="textItems">
+      <h2>Your matches - {{pagination.totalItems}} found</h2>
+    </div>
+    <div class="container mt-3">
+      <form class="form-inline" #form = "ngForm" (ngSubmit)="loadItems()" novalidate>
+        <!-- <div class="form-group">
+          <label for="minAge">Age From</label>
+          <input type="number" class="form-control ml-1" style="width: 70px" id="minAge" name="minAge" [(ngModel)]="userParams.minAge">
+        </div>
+      
+        <div class="form-group px-2">
+          <label for="maxAge">Age To</label>
+          <input type="number" class="form-control ml-1" style="width: 70px" id="maxAge" name="maxAge" [(ngModel)]="userParams.maxAge">
+        </div> -->
+        <!-- <div class="form-group px-2">
+          <label for="serviceType">Show: </label>
+          <select  class="form-control ml-1" style="width: 130px" [(ngModel)]="userParams.serviceType" id="serviceType" name="serviceType">
+            <option *ngFor="let serviceType of serviceTypeList" [value]="serviceType.value">
+      {{serviceType.display}}
+            </option>
+          </select>
+        </div> -->
+
+        <div class="col">
+          <div class="btn-group float-left" *ngIf= "textItems">
+            <button type="button" name="serviceType" (click)= "textItemToggle()" class="btn btn-warning"  [(ngModel)]= "itemParams.itemType" btnRadio="sand" (click)="loadItems()">Sand</button>
+            <button type="button" name="serviceType" (click)= "textItemToggle()" class="btn btn-warning" [(ngModel)]= "itemParams.itemType" btnRadio="cement" (click)="loadItems()">Cement</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="btn-group float-left" *ngIf= "!textItems">
+            <button type="button" name="serviceType" (click)= "textItemToggle()" class="btn btn-primary"  [(ngModel)]= "itemParams.itemType" btnRadio="sand" (click)="loadItems()">Sand</button>
+            <button type="button" name="serviceType" (click)= "textItemToggle()" class="btn btn-warning" [(ngModel)]= "itemParams.itemType" btnRadio="cement" (click)="loadItems()">cement</button>
+          </div>
+        </div>
+        <div class="form-group" *ngIf= "textItems">
+          <label for="minItemPrice">Price From</label>
+          <input type="number" class="form-control ml-1" style="width: 70px" id="minItemPrice" name="minItemPrice" [(ngModel)]="itemParams.minItemPrice">
+        </div>
+      
+        <div class="form-group px-2" *ngIf= "textItems">
+          <label for="maxItemPrice">Price To</label>
+          <input type="number" class="form-control ml-1" style="width: 70px" id="maxItemPrice" name="maxItemPrice" [(ngModel)]="itemParams.maxItemPrice">
+        </div> 
+        <button *ngIf= "textItems" type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
+        <button *ngIf= "textItems" type="button" class="btn btn-info" style="margin-left:10px" (click)="resetFilters()">Reset Filter</button>
+      </form>
+      <br>
+
+
+
+
+
     <div class="row">
   <div *ngFor= "let item of items">
     <app-item-cards [item]= "item"></app-item-cards>
@@ -9,3 +62,11 @@
   </div>
 </div>
 
+<div class="d-flex justify-content-center" *ngIf= "textItems">
+  <pagination [boundaryLinks]="true" 
+              [totalItems]="pagination.totalItems"
+              [itemsPerPage]="pagination.itemsPerPage"
+              [(ngModel)]="pagination.currentPage"
+              (pageChanged)= "pageChanged($event)"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+</pagination></div>

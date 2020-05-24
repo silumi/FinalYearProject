@@ -8,12 +8,13 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ItemListResolver implements Resolve<Items[]> {
-
+pageNumber = 1;
+pageSize = 5;
 constructor(private itemService: ItemsService, private router: Router, private alertify: AlerifyService) {}
 
 resolve(route: ActivatedRouteSnapshot): Observable<Items[]> {
     // tslint:disable-next-line: no-string-literal
-    return this.itemService.getItems().pipe(
+    return this.itemService.getItems(this.pageNumber, this.pageSize).pipe(
         // tslint:disable-next-line: no-shadowed-variable
         catchError(error => {
             this.alertify.error('Problem retrieving data');

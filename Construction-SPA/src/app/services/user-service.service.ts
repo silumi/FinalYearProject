@@ -22,8 +22,9 @@ export class UserServiceService {
     }
 
     if (userParams != null) {
-     params = params.append('minAge', userParams.minAge);
-     params = params.append('maxAge', userParams.maxAge);
+     params = params.append('serviceType', userParams.serviceType);
+     params = params.append('minChargers', userParams.minChargers);
+     params = params.append('maxChargers', userParams.maxChargers);
      params = params.append('orderBy', userParams.orderBy);
      }
     return this.http.get<User[]>(this.baseUrl + 'user', {observe: 'response', params})
