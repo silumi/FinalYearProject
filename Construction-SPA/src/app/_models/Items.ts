@@ -3,6 +3,7 @@ import { ItemPhoto } from './ItemPhoto';
 import { ItemReviews } from './itemReviews';
 export interface Items {
     itemId: number;
+    supplierId: number;
     itemType: string;
     itemName: string;
     itemPrice: string;

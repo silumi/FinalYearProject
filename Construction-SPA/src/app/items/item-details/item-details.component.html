@@ -30,7 +30,7 @@
           </div>
           <div class="card-footer">
             <div class="btn-group d-flex">
-              <button class="btn btn-primary w-100">Message</button>
+              <button class="btn btn-primary w-100" (click)= "selectTabs(2)">Message</button>
               <button class="btn btn-success w-100">Add To Cart</button>
             </div>
           </div>
@@ -38,7 +38,7 @@
       </div>
       <div class="col-sm-8">
         <div class="tab-panel">
-          <tabset class="member-tabset">
+          <tabset class="member-tabset"  #memberTabs>
             <tab heading="About">
               <h3>{{items.itemName}}</h3>
               <h4>Description </h4>
@@ -61,6 +61,9 @@
             </tab>
             <tab heading="Photos">
               <ngx-gallery [options]= "galleryOptions" [images]= "galleryImages" class="ngx-gallery"></ngx-gallery>
+            </tab>
+            <tab heading="Messages">
+              <app-member-messages [recepientId]= "items.itemId"></app-member-messages>
             </tab>
             <tab heading="Reviews">
               <app-item-reviews [reviewRecipientId]= "items.itemId"></app-item-reviews>

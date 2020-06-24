@@ -1,6 +1,7 @@
+import { TabsetComponent } from 'ngx-bootstrap/tabs';
 import { AlerifyService } from './../../services/alerify.service';
 import { ItemsService } from './../../services/items.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Items } from 'src/app/_models/Items';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
@@ -11,6 +12,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov
   styleUrls: ['./item-details.component.css']
 })
 export class ItemDetailsComponent implements OnInit {
+  @ViewChild('memberTabs', { static: true }) memberTabs: TabsetComponent;
 items: Items;
 
 galleryOptions: NgxGalleryOptions[];
@@ -47,6 +49,8 @@ getItemImages() {
     }
     return imageUrl;
   }
-
+  selectTabs(tabId: number) {
+    this.memberTabs.tabs[tabId].active = true;
+    }
 
 }
