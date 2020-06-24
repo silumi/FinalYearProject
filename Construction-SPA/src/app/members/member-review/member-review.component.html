@@ -1,0 +1,31 @@
+<!-- <p *ngFor= "let review of reviews">{{review.review}}</p> -->
+<div class="card">
+    <div class="card-body">
+        <div *ngIf= "reviews?.length === 0">
+            <p>No Reviews Yet!</p>
+        </div>
+        <ul class="chat">
+            <li *ngFor= "let review of reviews">
+                
+                    
+                    <div class="chat-body">
+                     
+                      <p>{{review.review}}</p>
+                      
+                        <button  *ngIf= "review.reviewRecepientId == currentUserId" class="btn btn-danger btn-s"(click)= "deleteReview(review.id)">Delete</button>
+                      
+                      <small class="text-muted">
+                        <span> {{review.reviewAdded | dateAgo}}</span>
+                      &nbsp;&nbsp;
+                        <span class="chat-img">
+                            <img src="{{review.reviewSenderPhotoUrl}}" alt="{{review.reviewSenderUserName}}" class="rounded-circle">
+                          </span>
+                          <span style="margin-left: 2px;">{{review.reviewSenderUserName}}</span>
+                    </small>
+                    </div>
+                 
+                  </li>    
+        </ul> 
+           
+        
+    </div>

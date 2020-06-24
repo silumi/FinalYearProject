@@ -103,6 +103,9 @@
             <tab *ngIf="users.isJobSeeker== true" heading="Edit work Photos">
               <app-service-photo-edit [servicePhoto]="users.servicePhotos"></app-service-photo-edit>
             </tab>
+            <tab *ngIf="users.isJobSeeker== true" heading= "Edit My Reviews">
+             <app-member-review></app-member-review>
+            </tab>
           </tabset>
         </div>
       </div>

@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-body">
+        <div *ngIf= "reviews?.length === 0">
+            <p>No Reviews Yet!</p>
+        </div>
+        <ul class="chat">
+            <li *ngFor= "let review of reviews">
+                <div *ngIf="review.reviewSenderId != recepientId">
+                    
+                    <div class="chat-body">
+                     
+                      <p>{{review.review}}</p>
+                      
+                        <button *ngIf= "review.reviewSenderId == currentUserId" class="btn btn-danger btn-s"(click)= "deleteReview(review.id)">Delete</button>
+                      
+                      <small class="text-muted">
+                        <span> {{review.reviewAdded | dateAgo}}</span>
+                      &nbsp;&nbsp;
+                        <span class="chat-img">
+                            <img src="{{review.reviewSenderPhotoUrl}}" alt="{{review.reviewSenderUserName}}" class="rounded-circle">
+                          </span>
+                          <span style="margin-left: 2px;">{{review.reviewSenderUserName}}</span>
+                    </small>
+                    </div>
+                  </div>
+                  </li>    
+        </ul> 
+           
+        
+    </div>
+    <div class="card-footer">
+        <form #reviewForm="ngForm" (ngSubmit)="reviewForm.valid && sendReview()">
+            <div class="input-group">
+         <input type="text"
+         [(ngModel)]= "newReview.review"
+         name="review"
+         required
+             class="form-control input-sm"
+              placeholder="Add a Review">
+            <div class="input-group-append">
+              <button class="btn btn-primary" [disabled]="!reviewForm.valid">Send</button>
+            </div>
+        </div>
+        </form>
+      </div>
+</div>

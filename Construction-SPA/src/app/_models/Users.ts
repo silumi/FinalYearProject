@@ -1,3 +1,4 @@
+import { ServiceReviews } from './ServiceReviews';
 import { ServicePhotos } from './ServicePhoto';
 import { UserPhotos } from './UserPhotos';
 
@@ -25,5 +26,6 @@ export interface User {
     experience?: string;
     photos?: UserPhotos[];
     servicePhotos?: ServicePhotos[];
+    serviceReviews?: ServiceReviews[];
 
 }

@@ -34,7 +34,7 @@
       </div>
       <div class="card-footer">
             <div class="btn-group d-flex">
-                   <button class="btn btn-primary w-100" (click)= "selectTabs(3)">Message</button>
+                   <button class="btn btn-primary w-100" (click)= "selectTabs(2)">Message</button>
                    <button class="btn btn-success w-100">Request</button> 
             </div>
       </div>
@@ -67,13 +67,13 @@
                         <ngx-gallery [options]= "galleryOptions" [images] ="galleryImages" class ="ngx-gallery"></ngx-gallery>
                         
                   </tab>
-                  <tab heading="Reviews">
-                    <h4>Reviews</h4>
-                    <p>Reviews comes here</p>
-                  </tab>
+                  
                   <tab heading="Messages">
                     <app-member-messages [recepientId]="users.id"></app-member-messages>
                   </tab>
+                  <tab heading="Reviews">
+                        <app-reviews [recepientId]= "users.id"></app-reviews>
+                      </tab>
                   </tabset>
                   </div>
                   </div>

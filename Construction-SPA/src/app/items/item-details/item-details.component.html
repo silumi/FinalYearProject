@@ -63,7 +63,8 @@
               <ngx-gallery [options]= "galleryOptions" [images]= "galleryImages" class="ngx-gallery"></ngx-gallery>
             </tab>
             <tab heading="Reviews">
-              <h4>Reviews goes here</h4>
+              <app-item-reviews [reviewRecipientId]= "items.itemId"></app-item-reviews>
+            
             </tab>
           </tabset>
         </div>

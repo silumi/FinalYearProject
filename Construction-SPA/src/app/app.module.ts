@@ -1,3 +1,4 @@
+import { ReviewsService } from 'src/app/services/reviews.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
@@ -26,7 +27,6 @@ import { SmallCardsComponent } from './dashboard/small-cards/small-cards.compone
 import { ContentComponent } from './dashboard/content/content.component';
 import { ChartsComponent } from './dashboard/charts/charts.component';
 import { CommentComponent } from './dashboard/comment/comment.component';
-import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -75,6 +75,10 @@ import { MessagesResolver } from './_resolvers/messages.resolvers';
 import { MessagesComponent } from './messages/messages.component';
 import { DateAgoPipe } from './Pipes/date-ago.pipe';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { ReviewsComponent } from './members/reviews/reviews.component';
+import { MemberReviewComponent } from './members/member-review/member-review.component';
+import { ItemReviewsComponent } from './members/reviews/item-reviews/item-reviews.component';
+import { ItemReviewService } from './services/item-review.service';
 
 
 
@@ -133,7 +137,10 @@ export function tokenGetter() {
     StatisticComponent,
     MessagesComponent,
     DateAgoPipe,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    ReviewsComponent,
+    MemberReviewComponent,
+    ItemReviewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,6 +176,8 @@ export function tokenGetter() {
    MemberListResolver,
    MemberEditResolver,
    UserServiceService,
+   ReviewsService,
+   ItemReviewService,
    MessagesResolver,
    ItemsService,
    AuthGuard,

@@ -41,7 +41,7 @@ loadMessages() {
  });
 }
 
-deleteMessage(id: number){
+deleteMessage(id: number) {
   this.alertify.confirm('Are you sure you want to delete this message?', () => {
     this.messageService.deleteMessage(id, this.authService.decodedToken.nameid).subscribe(() => {
       this.messages.splice(this.messages.findIndex(m => m.id === id), 1);

@@ -1,5 +1,6 @@
 import { Shops } from './Shops';
 import { ItemPhoto } from './ItemPhoto';
+import { ItemReviews } from './itemReviews';
 export interface Items {
     itemId: number;
     itemType: string;
@@ -15,4 +16,5 @@ export interface Items {
     dateAdded: Date;
     shop: Shops[];
     itemPhoto?: ItemPhoto[];
+    itemReviews?: ItemReviews[];
 }
