@@ -40,8 +40,8 @@
                       
                     </div>
                     <div class="col">
-                        <button class="btn btn-info" data-target="#cartModal" data-toggle="modal">View</button>
-                          <app-shopping-cart></app-shopping-cart>
+                        <button class="btn btn-info" (click)="loadMessages()">View</button>
+                          
                         </div>
                   </div>
             </div>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col">
                         <button class="btn btn-info" data-target="#invoices-modal" data-toggle="modal">View</button>
-                          <app-invoices></app-invoices>
+                         
                         </div>
                   </div>
             </div>
@@ -80,12 +80,12 @@
                    
                     <div class="col">
                         <div class="text-uppercase text-muted small">All</div>
-                      <div class="text-value-xl">459</div>
+                      <div class="text-value-xl"></div>
                       
                     </div>
                     <div class="col">
-                        <button class="btn btn-info" data-target="#complaints-modal" data-toggle="modal">View</button>
-                          <app-complaints></app-complaints>
+                        <button class="btn btn-info" (click)="loadComplaints()">View</button>
+                          
                         </div>
                   </div>
             </div>

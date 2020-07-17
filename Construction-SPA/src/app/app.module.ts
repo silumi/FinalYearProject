@@ -1,3 +1,6 @@
+import { ComplaintsService } from './services/complaints.service';
+import { ComplaintsResolver } from './_resolvers/complaints.resolvers';
+import { MessagesService } from './services/messages.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
@@ -41,8 +44,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { EmailComponent } from './email/email.component';
 import { ChatsComponent } from './chats/chats.component';
-import { InvoicesComponent } from './invoices/invoices.component';
-import { ComplaintsComponent } from './complaints/complaints.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopnavComponent } from './topnav/topnav.component';
 import { StartComponent } from './start/start.component';
@@ -79,6 +80,11 @@ import { ReviewsComponent } from './members/reviews/reviews.component';
 import { MemberReviewComponent } from './members/member-review/member-review.component';
 import { ItemReviewsComponent } from './members/reviews/item-reviews/item-reviews.component';
 import { ItemReviewService } from './services/item-review.service';
+import { RatingsComponent } from './ratings/ratings.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
+import { MemberComplaintsComponent } from './members/member-complaints/member-complaints.component';
+
+
 
 
 
@@ -116,8 +122,6 @@ export function tokenGetter() {
     RegisterComponent,
     EmailComponent,
     ChatsComponent,
-    InvoicesComponent,
-    ComplaintsComponent,
     StartComponent,
     ShoppingCartComponent,
     MemberCardsComponent,
@@ -141,6 +145,9 @@ export function tokenGetter() {
     ReviewsComponent,
     MemberReviewComponent,
     ItemReviewsComponent,
+    RatingsComponent,
+    ComplaintsComponent,
+    MemberComplaintsComponent
   ],
   imports: [
     BrowserModule,
@@ -178,6 +185,9 @@ export function tokenGetter() {
    UserServiceService,
    ReviewsService,
    ItemReviewService,
+   MessagesService,
+   ComplaintsResolver,
+   ComplaintsService,
    MessagesResolver,
    ItemsService,
    AuthGuard,

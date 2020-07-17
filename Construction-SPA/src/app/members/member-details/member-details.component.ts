@@ -1,5 +1,5 @@
 import { AlerifyService } from './../../services/alerify.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { error } from 'protractor';
@@ -15,7 +15,7 @@ import { TabsetComponent } from 'ngx-bootstrap/tabs';
 export class MemberDetailsComponent implements OnInit {
 @ViewChild('memberTabs', { static: true }) memberTabs: TabsetComponent;
 users: User;
-
+@Input() recepientId: number;
 galleryOptions: NgxGalleryOptions[];
 galleryImages: NgxGalleryImage[];
 
@@ -86,4 +86,5 @@ getImages() {
 selectTabs(tabId: number) {
 this.memberTabs.tabs[tabId].active = true;
 }
+
 }

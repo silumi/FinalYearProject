@@ -1,5 +1,7 @@
 import { User } from './../../_models/Users';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Complaints } from 'src/app/_models/Complains';
 
 @Component({
   selector: 'app-small-cards',
@@ -8,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmallCardsComponent implements OnInit {
 user: User;
-  constructor() { }
+complaints: Complaints[];
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+loadComplaints() {
+this.router.navigate(['/complaints']);
+}
+loadMessages() {
+  this.router.navigate(['/messages']);
+  }
 }

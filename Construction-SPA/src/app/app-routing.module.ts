@@ -1,3 +1,6 @@
+import { ComplaintsResolver } from './_resolvers/complaints.resolvers';
+import { ComplaintsComponent } from './complaints/complaints.component';
+
 import { SupplierComponent } from './supplier/supplier.component';
 import { PreventUnsavedChanges } from './_guards/prevent-UnsavedChanges.guard';
 import { MemberListResolver } from './_resolvers/member-list.resolvers';
@@ -23,6 +26,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { ReviewsComponent } from './members/reviews/reviews.component';
 
 
+
+
 const routes: Routes = [
   {path: '', component: StartComponent},
 
@@ -31,6 +36,7 @@ const routes: Routes = [
      runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
    children: [
+    {path: 'complaints', component: ComplaintsComponent, resolve: {complaints: ComplaintsResolver}},
      { path: 'profile', component: ProfileComponent},
      { path: 'items', component: ItemListComponent, resolve: {items: ItemListResolver}},
      { path: 'items/:id', component: ItemDetailsComponent, resolve: {items: ItemDetailResolver}},

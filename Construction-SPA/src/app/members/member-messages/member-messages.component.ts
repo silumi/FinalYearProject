@@ -42,6 +42,7 @@ loadMessages() {
 }
 sendMessage() {
   this.newMessage.recepientId = this.recepientId;
+  debugger;
   this.messageService.sendMessage(this.authservice.decodedToken.nameid, this.newMessage)
   .subscribe((message: Message) => {
     this.messages.unshift(message);

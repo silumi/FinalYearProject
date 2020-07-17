@@ -20,7 +20,6 @@ if (page != null && itemsPerPage != null) {
   params = params.append('pageNumber', page);
   params = params.append('pageSize', itemsPerPage);
 }
-
 return this.http.get<Message[]>(this.baseUrl + 'user/' + id + '/messages', {observe: 'response', params})
   .pipe(
     map(response => {

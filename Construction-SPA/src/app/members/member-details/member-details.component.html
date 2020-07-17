@@ -36,6 +36,14 @@
             <div class="btn-group d-flex">
                    <button class="btn btn-primary w-100" (click)= "selectTabs(2)">Message</button>
                    <button class="btn btn-success w-100">Request</button> 
+                   <div>
+                        <button class="btn btn-warning w-100"  data-target="#complaint-modal" data-toggle="modal">Complaint</button> 
+                     <app-member-complaints [recepientId]= "users.id"></app-member-complaints>
+                   </div>
+                   
+                  
+                         
+                        
             </div>
       </div>
       </div>
@@ -74,6 +82,7 @@
                   <tab heading="Reviews">
                         <app-reviews [recepientId]= "users.id"></app-reviews>
                       </tab>
+                      
                   </tabset>
                   </div>
                   </div>
