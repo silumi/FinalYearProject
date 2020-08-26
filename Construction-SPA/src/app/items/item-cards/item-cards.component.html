@@ -6,7 +6,7 @@
       <h6 class="card-text">{{item.itemPrice}}</h6>
       <h6 class="card-subtitle">{{item.shopName}} {{item.city}}</h6>
      
-      <app-ratings></app-ratings>
+      <app-item-rating [itemId] = "item.itemId"></app-item-rating>
       
       <a class="btn btn-primary" style="width: 250px;" [routerLink] = "['/items/',item.itemId]">Read More</a>
       

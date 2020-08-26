@@ -1,3 +1,4 @@
+import { ServiceRating } from './serviceRating';
 import { ServiceReviews } from './ServiceReviews';
 import { ServicePhotos } from './ServicePhoto';
 import { UserPhotos } from './UserPhotos';
@@ -27,5 +28,5 @@ export interface User {
     photos?: UserPhotos[];
     servicePhotos?: ServicePhotos[];
     serviceReviews?: ServiceReviews[];
-
+    serviceRating?: ServiceRating[];
 }

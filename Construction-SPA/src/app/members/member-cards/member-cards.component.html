@@ -6,8 +6,9 @@
     <h5 class="card-subtitle mb-2 text-muted">{{user.firstName}}{{user.lastName}}</h5>
     <h6 class="card-subtitle">{{user.city}}</h6>
     <p class="card-text">{{user.chargers}}</p>
-    <p>*****</p>
-    
+    <app-service-rating [recepientId] = 'user.id'></app-service-rating>
+       
+    <app-rating-display [recepientId] = 'user.id'></app-rating-display>  
     <a class="btn btn-primary" style="width: 250px;" [routerLink] = "['/members/', user.id]">Read More</a>
     
   </div>

@@ -1,4 +1,5 @@
 import { ComplaintsService } from './services/complaints.service';
+import { StarRatingModule } from 'angular-star-rating';
 import { ComplaintsResolver } from './_resolvers/complaints.resolvers';
 import { MessagesService } from './services/messages.service';
 import { ReviewsService } from 'src/app/services/reviews.service';
@@ -80,9 +81,12 @@ import { ReviewsComponent } from './members/reviews/reviews.component';
 import { MemberReviewComponent } from './members/member-review/member-review.component';
 import { ItemReviewsComponent } from './members/reviews/item-reviews/item-reviews.component';
 import { ItemReviewService } from './services/item-review.service';
-import { RatingsComponent } from './ratings/ratings.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { MemberComplaintsComponent } from './members/member-complaints/member-complaints.component';
+import { TodosComponent } from './todos/todos.component';
+import { ServiceRatingComponent } from './members/service-rating/service-rating.component';
+import { ItemRatingComponent } from './items/item-rating/item-rating.component';
+import { RatingDisplayComponent } from './members/service-rating/rating-display/rating-display.component';
 
 
 
@@ -145,12 +149,16 @@ export function tokenGetter() {
     ReviewsComponent,
     MemberReviewComponent,
     ItemReviewsComponent,
-    RatingsComponent,
     ComplaintsComponent,
-    MemberComplaintsComponent
+    MemberComplaintsComponent,
+    TodosComponent,
+    ServiceRatingComponent,
+    ItemRatingComponent,
+    RatingDisplayComponent
   ],
   imports: [
     BrowserModule,
+    StarRatingModule,
     AppRoutingModule,
     FileUploadModule,
     ReactiveFormsModule,

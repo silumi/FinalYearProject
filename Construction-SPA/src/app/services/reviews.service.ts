@@ -1,7 +1,8 @@
 import { ServiceReviews } from './../_models/ServiceReviews';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,8 @@ export class ReviewsService {
 
   deleteReview(id: number, userId: number) {
     return this.http.post(this.baseUrl + 'user/' + userId + '/reviews/' + id, {});
+  }
+  addUserRate(userId: number, recepientId: number, rating: number) {
+return this.http.post(this.baseUrl + 'user/' + userId + '/serviceRating/' + recepientId + '/rate/' + rating, {});
   }
 }

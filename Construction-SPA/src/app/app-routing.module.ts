@@ -1,3 +1,4 @@
+import { TodosComponent } from './todos/todos.component';
 import { ComplaintsResolver } from './_resolvers/complaints.resolvers';
 import { ComplaintsComponent } from './complaints/complaints.component';
 
@@ -47,7 +48,8 @@ const routes: Routes = [
      {path: 'reviews', component: ReviewsComponent},
      { path: 'dashboard', component: DashboardComponent},
      { path: 'supplier', component: SupplierComponent},
-     { path: 'cart', component: ShoppingCartComponent}
+     { path: 'cart', component: ShoppingCartComponent},
+     { path: 'todos', component: TodosComponent}
   ]},
     {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

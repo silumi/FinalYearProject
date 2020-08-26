@@ -1,3 +1,4 @@
+import { ServiceRating } from 'src/app/_models/serviceRating';
 export interface ServiceReviews {
     id: number;
     review: string;
@@ -8,4 +9,5 @@ export interface ServiceReviews {
     reviewRecepientUserName: string;
     reviewSenderPhotoUrl: string;
     reviewRecepientPhotoUrl: string;
+    serviceRating: ServiceRating[];
 }

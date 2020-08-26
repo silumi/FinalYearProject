@@ -22,4 +22,7 @@ export class ItemReviewService {
   deleteReview(id: number, userId: number) {
     return this.http.post(this.baseUrl + 'user/' + userId + '/itemReviews/' + id, {});
   }
+  addItemRate(userId: number, itemId: number, rating: number) {
+    return this.http.post(this.baseUrl + 'user/' + userId + '/itemRating/' + itemId + '/rate/' + rating, {});
+ }
 }
