@@ -1,7 +1,9 @@
+import { ItemRating } from './../_models/ItemRating';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ItemReviews } from '../_models/itemReviews';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +27,7 @@ export class ItemReviewService {
   addItemRate(userId: number, itemId: number, rating: number) {
     return this.http.post(this.baseUrl + 'user/' + userId + '/itemRating/' + itemId + '/rate/' + rating, {});
  }
+ getRate(userId: number, itemId: number): Observable<ItemRating> {
+  return this.http.get<ItemRating>(this.baseUrl + 'user/' + userId + '/itemRating/' + itemId);
+    }
 }

@@ -86,7 +86,6 @@ import { MemberComplaintsComponent } from './members/member-complaints/member-co
 import { TodosComponent } from './todos/todos.component';
 import { ServiceRatingComponent } from './members/service-rating/service-rating.component';
 import { ItemRatingComponent } from './items/item-rating/item-rating.component';
-import { RatingDisplayComponent } from './members/service-rating/rating-display/rating-display.component';
 
 
 
@@ -153,8 +152,7 @@ export function tokenGetter() {
     MemberComplaintsComponent,
     TodosComponent,
     ServiceRatingComponent,
-    ItemRatingComponent,
-    RatingDisplayComponent
+    ItemRatingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ServiceRating } from './../../_models/ServiceRating';
 import { ReviewsService } from '../../services/reviews.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
@@ -14,6 +15,7 @@ import { User } from 'src/app/_models/Users';
 export class ServiceRatingComponent implements OnInit {
   @Input() recepientId: number;
   @Input() user: User;
+  ratings: ServiceRating;
   onClickResult: IStarRatingOnClickEvent;
   onHoverRatingChangeResult: IStarRatingIOnHoverRatingChangeEvent;
   onRatingChangeResult: IStarRatingOnRatingChangeEven;
@@ -21,14 +23,20 @@ export class ServiceRatingComponent implements OnInit {
   currentUserId = +this.authService.decodedToken.nameid;
 
   ngOnInit(): void {
+    this.loadRate();
   }
-
+  loadRate() {
+    this.reviewService.getRate(this.currentUserId, +this.recepientId).subscribe((rating: ServiceRating) => {
+      this.ratings = rating;
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
   onClick = ($event: IStarRatingOnClickEvent) => {
     this.reviewService.addUserRate(this.currentUserId, this.recepientId, $event.rating ).subscribe(() => {
-
     this.alertify.success('done!');
       }, error => {
-        this.alertify.error('error');
+    this.alertify.error('error');
       });
   }
 

@@ -1,6 +1,6 @@
-export interface ServiceRating{
+export interface ItemRating {
     dateCreated: Date;
-    recepientId: number;
+    itemId: number;
     votes: number;
     rate: DoubleRange;
 }

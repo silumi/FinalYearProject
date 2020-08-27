@@ -1,16 +1,22 @@
 <div class="row">
     <div class="col-sm-12">
-       
         <star-rating-comp [starType]="'svg'" 
         (onClick)="onClick($event)" 
         (onRatingChange)="onRatingChange($event)"
         (onHoverRatingChange)="onHoverRatingChange($event)"
         [step]= "0.5"
+        [rating]= "ratings?.rate"
         [showHalfStars]= "true"
-        [hoverEnabled]= "true">
+        [staticColor] = "'ok'"
+        [hoverEnabled]= "false">
         </star-rating-comp>
-       
     </div>
     
 </div>
+<div class="row">
+    <div class="col-sm-12">
+       <h6 style="color: black;">{{ratings?.rate | number : '1.1-1'}}</h6>
+        <p>Votes: {{ratings?.votes}}</p>  
+    </div>
 
+</div>

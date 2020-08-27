@@ -1,3 +1,5 @@
+import { ServiceRating } from './../_models/ServiceRating';
+import { Observable } from 'rxjs';
 import { ServiceReviews } from './../_models/ServiceReviews';
 import { Injectable, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -25,5 +27,8 @@ export class ReviewsService {
   }
   addUserRate(userId: number, recepientId: number, rating: number) {
 return this.http.post(this.baseUrl + 'user/' + userId + '/serviceRating/' + recepientId + '/rate/' + rating, {});
+  }
+  getRate(userId: number, recepientId: number): Observable<ServiceRating>{
+return this.http.get<ServiceRating>(this.baseUrl + 'user/' + userId + '/serviceRating/' + recepientId);
   }
 }
