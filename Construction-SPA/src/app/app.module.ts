@@ -1,3 +1,4 @@
+import { ScheduleService } from './services/schedule.service';
 import { ComplaintsService } from './services/complaints.service';
 import { StarRatingModule } from 'angular-star-rating';
 import { ComplaintsResolver } from './_resolvers/complaints.resolvers';
@@ -86,6 +87,16 @@ import { MemberComplaintsComponent } from './members/member-complaints/member-co
 import { TodosComponent } from './todos/todos.component';
 import { ServiceRatingComponent } from './members/service-rating/service-rating.component';
 import { ItemRatingComponent } from './items/item-rating/item-rating.component';
+import { SchedulerComponent } from './../app/members/scheduler/scheduler.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import {DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService,
+  ScheduleModule, RecurrenceEditorModule} from '@syncfusion/ej2-angular-schedule';
+FullCalendarModule.registerPlugins([
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 
 
@@ -152,7 +163,8 @@ export function tokenGetter() {
     MemberComplaintsComponent,
     TodosComponent,
     ServiceRatingComponent,
-    ItemRatingComponent
+    ItemRatingComponent,
+    SchedulerComponent
   ],
   imports: [
     BrowserModule,
@@ -164,6 +176,7 @@ export function tokenGetter() {
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     NgxGalleryModule,
+    FullCalendarModule,
     ButtonsModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     FormsModule,
@@ -176,7 +189,9 @@ export function tokenGetter() {
         whitelistedDomains: ['localhost:44368'],
         blacklistedRoutes: ['localhost:44368/api/auth']
       }
-    })
+    }),
+    ScheduleModule, RecurrenceEditorModule,
+
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
@@ -197,7 +212,13 @@ export function tokenGetter() {
    MessagesResolver,
    ItemsService,
    AuthGuard,
-   PreventUnsavedChanges
+   ScheduleService,
+   PreventUnsavedChanges,
+   DayService,
+   WeekService,
+   WorkWeekService,
+   MonthService,
+   MonthAgendaService
   ],
   bootstrap: [AppComponent]
 })

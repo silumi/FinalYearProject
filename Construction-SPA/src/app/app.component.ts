@@ -2,7 +2,7 @@ import { User } from './_models/Users';
 import { AuthService } from './services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { from } from 'rxjs';
+import { from, scheduled } from 'rxjs';
 
 @Component({
   selector: 'app-root',

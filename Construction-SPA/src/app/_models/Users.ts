@@ -2,6 +2,8 @@ import { ServiceRating } from './serviceRating';
 import { ServiceReviews } from './ServiceReviews';
 import { ServicePhotos } from './ServicePhoto';
 import { UserPhotos } from './UserPhotos';
+import { Todos } from './Todos';
+
 
 export interface User {
     id: number;
@@ -29,4 +31,6 @@ export interface User {
     servicePhotos?: ServicePhotos[];
     serviceReviews?: ServiceReviews[];
     serviceRating?: ServiceRating[];
+    todo?: Todos[];
+
 }

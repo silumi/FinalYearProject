@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="container-fluid" style="padding-top: 100px;">
+    <!-- <li *ngFor= "let todo of todo">
+      {{todo.title}}
+    </li> -->
+<ejs-schedule [selectedDate]= "setDate" [currentView]= "setView"
+(dragStart)= "onDragStart($event)" (resizeStart)= "onResizeStart($event)"
+[views]= "setViews"></ejs-schedule>
+  </div></div>
+
+

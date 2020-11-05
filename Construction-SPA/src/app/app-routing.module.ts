@@ -25,6 +25,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolvers';
 import { MessagesResolver } from './_resolvers/messages.resolvers';
 import { MessagesComponent } from './messages/messages.component';
 import { ReviewsComponent } from './members/reviews/reviews.component';
+import { SchedulerComponent } from './members/scheduler/scheduler.component';
 
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
    children: [
     {path: 'complaints', component: ComplaintsComponent, resolve: {complaints: ComplaintsResolver}},
      { path: 'profile', component: ProfileComponent},
+     { path: 'schedule', component: SchedulerComponent},
      { path: 'items', component: ItemListComponent, resolve: {items: ItemListResolver}},
      { path: 'items/:id', component: ItemDetailsComponent, resolve: {items: ItemDetailResolver}},
      { path: 'members/edit', component: MemberEditComponent, resolve: {user: MemberEditResolver}, canDeactivate: [PreventUnsavedChanges]},
